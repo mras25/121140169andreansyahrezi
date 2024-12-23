@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"> <!-- Mengatur karakter encoding dokumen menjadi UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Membuat halaman responsif -->
+    <title>Daftar</title> <!-- Judul halaman -->
+    <link rel="stylesheet" href="styles.css"> <!-- Menghubungkan file CSS eksternal -->
+    <style>
+        /* CSS untuk menyelaraskan label pilihan gender */
+        .gender-label {
+            display: inline-block; /* Menyusun label dalam satu baris */
+            margin-right: 10px; /* Memberikan jarak antar label */
+        }
+    </style>
+</head>
+<body>
+    <h1>Daftar</h1> <!-- Judul utama halaman -->
+    
+    <!-- Form pendaftaran dengan method POST yang diarahkan ke daftar.php -->
+    <form id="userForm" action="daftar.php" method="POST">
+        <!-- Input untuk username -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <!-- Input untuk email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <!-- Input untuk password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <!-- Pilihan gender dengan radio button -->
+        <label>Jenis Kelamin:</label>
+        <label class="gender-label">
+            <input type="radio" id="male" name="gender" value="male" required>
+            Laki-laki <!-- Opsi untuk laki-laki -->
+        </label>
+        <label class="gender-label">
+            <input type="radio" id="female" name="gender" value="female" required>
+            Perempuan <!-- Opsi untuk perempuan -->
+        </label><br>
+
+        <!-- Pilihan negara dengan dropdown -->
+        <label for="country">Negara:</label>
+        <select id="country" name="country" required>
+            <option value="indonesia">Indonesia</option> <!-- Opsi Indonesia -->
+            <option value="malaysia">Malaysia</option> <!-- Opsi Malaysia -->
+            <option value="singapore">Singapura</option> <!-- Opsi Singapura -->
+        </select><br>
+
+        <!-- Tombol untuk mengirim data -->
+        <input type="submit" value="Kirim">
+    </form>
+
+    <!-- Script JavaScript untuk validasi sederhana -->
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            // Mengambil nilai input dari form
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Validasi: Mengecek apakah username, email, atau password kosong
+            if (!username || !email || !password) {
+                alert('Username, Email, dan Password harus diisi!'); // Menampilkan pesan kesalahan
+                event.preventDefault(); // Mencegah pengiriman form jika validasi gagal
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Deklarasi tipe dokumen HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Mengatur karakter encoding halaman menjadi UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tag meta untuk memastikan halaman responsif pada perangkat dengan berbagai ukuran layar -->
+    <title>Login</title>
+    <!-- Judul halaman yang akan muncul pada tab browser -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Menghubungkan file CSS eksternal untuk styling -->
+</head>
+<body>
+    <!-- Memulai bagian isi halaman -->
+    <div class="register-container">
+        <!-- Membungkus konten utama dengan div untuk keperluan styling -->
+        <h1>Login</h1>
+        <!-- Judul atau heading untuk halaman login -->
+
+        <!-- Formulir login -->
+        <form id="Loginid" action="login.php" method="POST">
+            <!-- 
+                Atribut:
+                - `id`: Identitas unik formulir untuk manipulasi di JavaScript jika diperlukan.
+                - `action`: Menentukan file tujuan (login.php) tempat data dikirim.
+                - `method`: Menggunakan metode POST untuk mengirim data secara aman.
+            -->
+
+            <label for="username">Username:</label>
+            <!-- Label untuk input username, dihubungkan dengan input melalui atribut `for` -->
+            <input type="text" id="username" name="username" required>
+            <!-- 
+                Input teks untuk username.
+                - `id`: Identitas unik elemen input.
+                - `name`: Nama input yang digunakan saat data dikirim ke server.
+                - `required`: Atribut untuk memastikan input ini harus diisi.
+            -->
+
+            <label for="email">Email:</label>
+            <!-- Label untuk input email -->
+            <input type="email" id="email" name="email" required>
+            <!-- 
+                Input tipe email untuk validasi format email.
+                - `type`: Memastikan input harus berupa email valid.
+            -->
+
+            <label for="password">Password:</label>
+            <!-- Label untuk input password -->
+            <input type="password" id="password" name="password" required>
+            <!-- 
+                Input tipe password untuk keamanan (teks input tidak terlihat).
+                - `type`: Memastikan karakter input disembunyikan (sebagai titik atau bintang).
+            -->
+
+            <input type="submit" value="Login">
+            <!-- Tombol untuk mengirimkan data formulir ke server -->
+        </form>
+
+        <p>Belum punya akun? <a href="daftar.html">Daftar di sini</a></p>
+        <!-- Tautan untuk pengguna yang belum memiliki akun ke halaman pendaftaran -->
+    </div>
+</body>
+</html>
